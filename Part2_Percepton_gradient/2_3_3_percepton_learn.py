@@ -9,17 +9,14 @@ def activate_func(res):
     else:
         return 0
 
-data = np.array([
-    [1, 0.3, 1],
-    [0.4, 0.5, 1],
-    [0.7, 0.8, 0]
+X = np.array([
+    [1, 1, 0.3],
+    [1, 0.4, 0.5],
+    [1, 0.7, 0.8]
 ])
 
 w = np.array([0,0,0], dtype=float)
-y = data[:,2]
-X = data[:,:2]
-one = np.ones((data.shape[0],1))
-X = np.hstack((one, X))
+y = np.array([1,1,0])
 
 for i in range(X.shape[0]):
     s = summation_func(w, X[i])
